@@ -8,7 +8,7 @@ def get_coordinates(city, key):
         if results:
             lat = round(results[0]['geometry']['lat'], 2)
             lon = round(results[0]['geometry']['lng'], 2)
-            return lat, lon
+            return f'широта {lat}, долгота: {lon}'
         else:
             return 'Город не найден'
     except Exception as e:
@@ -16,9 +16,9 @@ def get_coordinates(city, key):
 
 
 key = '6d816a1105364ba3b749b5cd26ea80d7'
-city = "Химки"
+city = "Эквадор"
 coordinates = get_coordinates(city, key)
-print(f'Координаты гороода {city}:{coordinates}')
+print(f'Координаты гороода {city}: {coordinates}')
 
 """from opencage.geocoder import OpenCageGeocode
 
